@@ -32,11 +32,10 @@ section {
 h2,
 p,
 button {
-  margin: 0 3.23rem;
+  margin-left: 3.23rem;
 }
 
 h2 {
-  /* padding: 0 3.23rem; */
   color: var(--very-light-gray);
   font-family: 'Big Shoulders Display', cursive;
 }
@@ -65,9 +64,8 @@ main {
 }
 
 .sedan {
-  display: flex;
-  flex-flow: column wrap;
-  justify-content: space-between;
+  /* display: flex;
+  flex-flow: column wrap; */
   grid-area: sedan;
   background-color: var(--bright-orange);
 }
