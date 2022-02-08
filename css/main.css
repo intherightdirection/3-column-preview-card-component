@@ -16,37 +16,49 @@ html {
 }
 
 body {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
   font-family: 'Lexend Deca', sans-serif;
-  background-color: bisque;
 }
 
-section {
+.container {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 16px);
   width: 100%;
 }
 
-h2,
-p,
-button {
-  margin-left: 3.23rem;
+/* Main is growing and sections are not growing with it, center content in grid */
+
+section {
+  padding: 3.13rem;
+  /* max-width: 28rem; */
+}
+
+figure {
+  margin: 0;
 }
 
 h2 {
   color: var(--very-light-gray);
   font-family: 'Big Shoulders Display', cursive;
+  font-size: 2em;
 }
 
 p {
+  width: 15.2rem;
   color: var(--transparent-white);
+  line-height: 1.6;
+
 }
 
 button {
+  padding: 1.2rem 2.4rem;
   background-color: var(--very-light-gray);
-  border: none;
+  border: 1px solid var(--very-light-gray);
+  border-radius: 2rem;
+  font-size: inherit;
+  font-weight: bold;
 }
 
 /* Main Content
@@ -55,19 +67,12 @@ main {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr 1fr;
-  grid-template-areas:
-    "sedan"
-    "suv"
-    "luxery";
-  width: 93%;
-  background-color: aqua;
+  margin-bottom: 1em;
 }
 
 .sedan {
-  /* display: flex;
-  flex-flow: column wrap; */
-  grid-area: sedan;
   background-color: var(--bright-orange);
+  border-radius: 10px 10px 0 0;
 }
 
 .sedan button {
@@ -75,9 +80,6 @@ main {
 }
 
 .suv {
-  /* display: flex;
-  flex-flow: column wrap; */
-  grid-area: suv;
   background-color: var(--dark-cyan);
 }
 
@@ -86,12 +88,18 @@ main {
 }
 
 .luxery {
-  grid-area: luxery;
   background-color: var(--very-dark-cyan);
+  border-radius: 0 0 10px 10px;
 }
 
 .luxery button {
   color: var(--very-dark-cyan);
+}
+
+button:hover {
+  background-color: inherit;
+  color: var(--very-light-gray);
+  cursor: pointer;
 }
 
 /* Attribution
@@ -106,4 +114,23 @@ main {
 .attribution a {
   font-weight: 500;
   color: hsl(228, 45%, 44%);
+}
+
+
+/* Tablets
+   ========================================================================== */
+@media screen and (min-width: 1200px) {
+
+  main {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+  }
+
+  .sedan {
+    border-radius: 10px 0 0 10px;
+  }
+
+  .luxery {
+    border-radius: 0 10px 10px 0;
+  }
 }
