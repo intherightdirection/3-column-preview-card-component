@@ -28,46 +28,50 @@ body {
   width: 100%;
 }
 
-/* Main is growing and sections are not growing with it, center content in grid */
+main {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  justify-items: center;
+  margin-bottom: 1em;
+}
 
 section {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
   padding: 3.13rem;
-  /* max-width: 28rem; */
 }
 
 figure {
+  flex-basis: 1 1 auto;
   margin: 0;
 }
 
 h2 {
+  flex-basis: 1 1 auto;
   color: var(--very-light-gray);
   font-family: 'Big Shoulders Display', cursive;
   font-size: 2em;
 }
 
 p {
-  width: 15.2rem;
+  flex-basis: 1 1 auto;
+  max-width: 15.2rem;
   color: var(--transparent-white);
   line-height: 1.6;
 
 }
 
 button {
-  padding: 1.2rem 2.4rem;
+  flex-basis: 1 1 auto;
+  padding: 1.2rem 2rem;
   background-color: var(--very-light-gray);
   border: 1px solid var(--very-light-gray);
   border-radius: 2rem;
   font-size: inherit;
   font-weight: bold;
-}
-
-/* Main Content
-   ========================================================================== */
-main {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  margin-bottom: 1em;
+  max-width: 10rem;
 }
 
 .sedan {
@@ -124,6 +128,10 @@ button:hover {
   main {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr;
+  }
+
+  section {
+    min-height: 28rem;
   }
 
   .sedan {
